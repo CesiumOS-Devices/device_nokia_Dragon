@@ -1,4 +1,4 @@
-#
+# 
 # Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +27,9 @@ $(call inherit-product, device/nokia/Dragon/device.mk)
 
 # Inherit some common aosp stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+TARGET_GAPPS_ARCH := arm64
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+CUSTOM_BUILD_TYPE := OFFICIAL
 
 # A/B updater
 AB_OTA_UPDATER := true
@@ -65,7 +67,7 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libz
 
 # Device identifiers
-PRODUCT_NAME := lineage_Dragon
+PRODUCT_NAME := cesium_Dragon
 PRODUCT_BRAND := nokia
 PRODUCT_DEVICE := Dragon
 PRODUCT_MANUFACTURER := nokia
